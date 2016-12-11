@@ -1,1 +1,22 @@
 .sidebar
+  .headerimg
+    .headerimgcontent
+      %h1 Chris Aikman
+      .profdesc Computer Scientist
+  %br/
+  %h3 Skills Overview
+  = partial 'rating_skill', locals: {skill: "Programming", rating: "88", color: "#16c"}
+  = partial 'rating_skill', locals: {skill: "UI Design", rating: "78", color: "#6c1"}
+  = partial 'rating_skill', locals: {skill: "Web Design", rating: "84", color: "#61c"}
+  = partial 'rating_skill', locals: {skill: "Application Design", rating: "82", color: "#c61"}
+  %br/
+  %h3 Resume
+  .sm_links
+    %a{href: "./files/chrisaikman-resume#{resume ||= ""}.pdf", target: "_blank"}
+      %img{src: "./images/resume.svg"}
+  %h3 Links
+  .sm_links
+    %a{href: "https://linkedin.com/in/chris-aikman", target: "_blank"}
+      %img{src: "./images/linkedin.svg"}
+    %a{href: "https://github.com/ChrisAikman", target: "_blank"}
+      %img{src: "./images/github.svg"}

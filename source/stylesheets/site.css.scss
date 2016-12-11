@@ -81,6 +81,58 @@ li {
   background-color: $content-bg-color;
 }
 
+.headerimg {
+  @include size(100%, 300px);
+  position: relative;
+  background: url('../images/Header_Box.jpg');
+  background-size: 100% 100%;
+
+  .headerimgcontent {
+    color: #fff;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    background-color: rgba(0, 0, 0, .75);
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+}
+
+.skillbox {
+  width: 100%;
+  box-sizing: border-box;
+  @include paddinglr(5px, 5px);
+
+  .skill {
+    border: 1px solid black;
+    background-color: #333;
+    margin-bottom: 5px;
+
+    .skillbar {
+      color: #fff;
+      text-align: right;
+      font-weight: bold;
+      border-right: 1px solid black;
+      padding-right: 5px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.sm_links a{
+  text-decoration: none;
+
+  img {
+    padding: 1px;
+    @include size(32px, 32px);
+    @include round-border(6px);
+  }
+
+  img:hover {
+    background-color: $primary-color;
+  }
+}
+
 .content {
   float: left;
   width: 2 / 3 * 100%;
