@@ -6,7 +6,8 @@ $bg-color:          #234;
 $primary-color:     #203040;
 $secondary-color:   #7fbfff;
 $text-color:        #333;
-$text-header-color: #ddd;
+$text-color-quote:  #555;
+$text-color-header: #ddd;
 $content-bg-color:  #fff;
 
 $fonts: 12px/1.5 'Open Sans', Arial, Helvetica, sans-serif;
@@ -26,6 +27,40 @@ $fonts: 12px/1.5 'Open Sans', Arial, Helvetica, sans-serif;
      -moz-border-radius: $radius;
       -ms-border-radius: $radius;
           border-radius: $radius;
+}
+
+@mixin tag_main($lineheight) {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  line-height: $lineheight;
+  @include round-border(2px);
+}
+
+@mixin tag_left($col, $bgcol) {
+  float: left;
+  text-align: left;
+  color: $col;
+  background-color: $bgcol;
+  @include round-border(2px 0 0 2px);
+  @include paddinglr(4px, 5px);
+}
+
+@mixin tag_right($leftpad) {
+  float: right;
+  display: block;
+  position: relative;
+  @include paddinglr($leftpad, 4px);
+  @include round-border(0 2px 2px 0);
+}
+
+@mixin tag_arrow($size, $color) {
+  position: absolute;
+  @include size(0, 0);
+  left: 0;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-left: $size solid $color;
 }
 
 body {
@@ -145,7 +180,7 @@ li {
 
   .section_header {
     background: $primary-color;
-    color: $text-header-color;
+    color: $text-color-header;
     padding-left: 5px;
   }
 
@@ -167,7 +202,7 @@ li {
         float: left;
       }
 
-      ul, p {
+      li, p {
         text-align: justify;
         //margin-left: 0px;
       }
@@ -183,8 +218,23 @@ li {
 }
 
 .aboutme p {
+  text-align: justify;
   text-indent: 10px;
   @include paddinglr(5px, 5px);
+}
+
+.personal_img {
+  float: left;
+  width: 1 / 3 * 100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  @include paddinglr(10px, 10px);
+
+  img {
+    width: 100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+  }
 }
 
 .mapmarker {
@@ -202,47 +252,52 @@ li {
   text-align: left;
 }
 
+.qual_skills li{
+  margin-bottom: 20px;
+}
+
 .notable_projects ul {
   margin-bottom: 5px;
 }
 
-.info_tag {
-  position: relative;
+.question {
+  padding-left: 10px;
+  font-style: italic;
+  color: $text-color-quote;
+  border-left: 2px solid $text-color-quote;
+  margin-bottom: 5px;
+}
+
+.address {
+  text-align: left;
   display: inline-block;
-  overflow: hidden;
-  line-height: 20px;
-  font-weight: bold;
+  margin: auto;
   @include round-border(2px);
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.info_tag {
+  font-weight: bold;
+  @include tag_main(20px);
 
   span.left {
-    float: left;
-    text-align: left;
-    color: #7FBFFF;
-    background-color: $primary-color;
     @include size(50px, 20px);
-    @include round-border(2px 0 0 2px);
-    @include paddinglr(4px, 5px);
+    @include tag_left($secondary-color, $primary-color);
   }
 
   span.right {
     color: $primary-color;
-    background-color: #7FBFFF;
+    background-color: $secondary-color;
     width: 105px;
     text-align: right;
-    float: right;
-    display: block;
-    position: relative;
-    @include paddinglr(14px, 4px);
-    @include round-border(0 2px 2px 0);
+    @include tag-right(14px);
   }
 
   span.arrow {
-    position: absolute;
-    left: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid $primary-color;
-    @include size(0, 0);
+    @include tag_arrow(10px, $primary-color);
   }
 }
 
@@ -259,6 +314,26 @@ li {
   @include round-border(2px);
   @include paddinglr(4px, 4px);
   margin-bottom: 5px;
+}
+
+.section_tag {
+  float: left;
+  @include tag_main(36px);
+  margin: 5px 5px 5px 0px;
+
+  span.left {
+    width: 40px;
+    font-size: 175%;
+    @include tag_left($primary-color, $secondary-color);
+  }
+
+  span.right {
+    @include tag-right(22px);
+  }
+
+  span.arrow {
+    @include tag_arrow(18px, $secondary-color);
+  }
 }
 
 .mobile {
@@ -303,5 +378,100 @@ li {
     height: 200px;
     background: url('../images/Header_Rect.jpg');
     background-size: 100% 100%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .container_960 {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  body {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .headerimg {
+    background-size: auto 100%;
+    background-position: right;
+  }
+
+  .sm_links a img {
+    @include size(64px, 64px);
+  }
+
+  .content .content_section .section_description {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    ul {
+      margin-right: 30px;
+    }
+  }
+
+  .content .content_section .section_keys {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    @include paddinglr(30px, 30px);
+  }
+
+  .personal_img {
+    float: left;
+    width: 100%;
+
+    img {
+      max-width: 360px;
+    }
+  }
+
+  .electives {
+    margin-left: 30px;
+  }
+
+  .skills_list {
+    width: 100%;
+    box-sizing: border-box;
+    @include paddinglr(30px, 30px);
+  }
+
+  .qual_skills li {
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .bottom_space {
+    margin-bottom: 30px;
+  }
+
+  .info_tag {
+    width: 100%;
+    box-sizing: border-box;
+
+    span.left {
+      width: 28.33333%;
+      box-sizing: border-box;
+    }
+
+    span.right {
+      width: 71.66667%;
+      box-sizing: border-box;
+    }
+  }
+
+  .button_expand {
+    width: 100%;
   }
 }
