@@ -1,0 +1,28 @@
+.container_960
+  /Sidebar
+  = partial 'sidebar'
+
+  .content
+    /About Me
+    .content_section
+      .section_header
+        %h2 About Me
+
+      .aboutme
+        %h3 Professional Life
+        %p
+          Hello! My name is Chris Aikman and I am a recently graduated Computer Scientist.
+          = partial 'aboutme_pro'
+      .clear
+
+    /Education
+    = partial 'education'
+
+    /Work Experience
+    = partial 'work_experience'
+
+    /Skills and Proficiencies
+    = partial 'skills'
+
+    /Notable Projects
+    = partial 'notable_projects'
