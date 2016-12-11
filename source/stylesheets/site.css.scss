@@ -95,6 +95,10 @@ li {
     background-color: rgba(0, 0, 0, .75);
     padding-left: 10px;
     box-sizing: border-box;
+
+    .profdesc {
+      font-style: italic;
+    }
   }
 }
 
@@ -119,7 +123,7 @@ li {
   }
 }
 
-.sm_links a{
+.sm_links a {
   text-decoration: none;
 
   img {
@@ -267,4 +271,37 @@ li {
   overflow: hidden;
   visibility: hidden;
   @include size(0, 0);
+}
+
+@media only screen and (max-width: 980px) {
+  .container_960 {
+    width: 640px;
+  }
+
+  .sidebar, .content {
+    width: 100%;
+  }
+
+  .content {
+    padding: 0px;
+  }
+
+  .sm_links a img {
+    @include size(48px, 48px);
+    padding: 2px;
+  }
+
+  .skillbox {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    @include paddinglr(5px, 5px);
+  }
+
+  .headerimg {
+    width: 100%;
+    height: 200px;
+    background: url('../images/Header_Rect.jpg');
+    background-size: 100% 100%;
+  }
 }
