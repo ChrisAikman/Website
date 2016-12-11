@@ -1,3 +1,32 @@
 .content_section
   .section_header
     %h2 Work Experience
+
+  /SNL
+  = partial 'work_experience_header', locals: {title: "Sandia National Laboratories", pos: "Summer Intern", dates: "May 2016 to Sep 2016"}
+  .section_description.bottom_space
+    %ul
+      - snl1_s = "Developed and implemented an application to examine the producibility of three-dimensional objects on additive manufacturing printers."
+      - snl1_l = "Developed and implemented a design rule checker to examine the printability of three-dimensional objects on additive manufacturing printers. Utilized the STL and STEP file formats to run diagnostics that checked for enclosed pockets, unsupported angles, invalid holes, tall faces, local minimum, and water tightness. Visualized the results through the export of modified model files with added colors and geometry."
+      = partial 'detail_text', locals: {id: "SNL_1", desc_short: snl1_s, desc_long: snl1_l}
+
+      - snl2_s = "Worked as part of the team that won the 2016 NWSPRINT competition to design and create a mechanical sensor to detect launch profiles in missiles."
+      - snl2_l = "Assisted in the 2016 NWSPRINT competition to design and create a mechanical sensor to detect launch profiles in missiles. Developed, designed, ran simulations, performed analysis, and assisted in testing hardware. Our team placed first in the competition as decided by a panel of experts in the field."
+      = partial 'detail_text', locals: {id: "SNL_2", desc_short: snl2_s, desc_long: snl2_l}
+  .clear
+
+  /NMT
+  = partial 'work_experience_header', locals: {title: "New Mexico Institute of Mining and Technology", pos: "Grader & Tutor", dates: "Jan 2014 to Dec 2015"}
+  .section_description.bottom_space
+    %ul
+      %li Helped grade homework for lower level computer science classes and held assigned tutoring hours for students.
+  .clear
+
+  /WWA
+  = partial 'work_experience_header', locals: {title: "Ward Wight Sotheby's International Realty", pos: "Administrator", dates: "2010 to Jan 2013"}
+  .section_description.bottom_space
+    %ul
+      - wwa1_s = "Balanced accounts, optimized workflow for computer systems, aided in moving to a new web server, and created and maintained several different graphs and charts."
+      - wwa1_l = "Balanced accounts that dealt with millions of dollars of real estate sales. Optimized workflow for several different computer systems that agents used when making a transaction or when claiming reimbursable expenses. Aided in moving to a new web server by updating web pages and creating new ones. Created and maintained several different graphs and charts on real estate data that were used to recruit new agents and were published in various promotional real estate magazines and on websites."
+      = partial 'detail_text', locals: {id: "WWA_1", desc_short: wwa1_s, desc_long: wwa1_l}
+  .clear

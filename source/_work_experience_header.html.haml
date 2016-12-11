@@ -1,0 +1,6 @@
+%h3 #{title}
+
+.section_keys
+  = partial 'info_tag', locals: {left_text: "Position", right_text: pos}
+  %span.desktop #{dates}
+  = partial 'info_tag', locals: {left_text: "Dates", right_text: dates, classes: "mobile"}

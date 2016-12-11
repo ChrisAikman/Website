@@ -1,3 +1,51 @@
 .content_section
   .section_header
     %h2 Notable Projects
+
+  .notable_projects
+    = partial 'notable_projects_header', locals: {title: "Design Rule Checker for Additive Manufacturing", roles: ["Programmer", "UI Designer"], date: "2016"}
+    .section_description.bottom_space
+      %ul
+        %li Researched, designed, and implemented a design rule checker used to examine the printability of three-dimensional models.
+        %li Implemented diagnostics to check for enclosed pockets, unsupported angles, invalid holes, tall faces, local minimum, and water tightness.
+        %li Visualized the output by modifying input files with color or added geometry.
+        %li Utilized Java for the interface, and Python for modular scripts.
+    .clear
+
+    = partial 'notable_projects_header', locals: {title: "Neural Network for Font Recognition in Images", roles: ["Programmer"], date: "2016"}
+    .section_description.bottom_space
+      %ul
+        %li Worked as part of a team that designed and implemented a neural network that detected letters within an image document and classified the type of font being used. Classification utilized a LVQ network trained on sample documents.
+        %li
+          This project was implemented in a remote working environment, utilizing
+          %a{href: "http://slack.com", target: "_blank"} Slack
+          for team communication.
+    .clear
+
+    = partial 'notable_projects_header', locals: {title: "Compiler for the COOL Language", roles: ["Team Lead", "Programmer"], date: "2015"}
+    .section_description.bottom_space
+      %ul
+        %li
+          Lead a team that researched, designed, and implemented a compiler for the
+          %a{href: "https://en.wikipedia.org/wiki/Cool_(programming_language)", target: "_blank"} COOL
+          programming language - a subset of the C language.
+        %li
+          This project was implemented in a remote working environment, utilizing
+          %a{href: "http://gitter.im", target: "_blank"} Gitter
+          for team communication.
+    .clear
+
+    = partial 'notable_projects_header', locals: {title: "Interactive Web-Based Data Visualization", roles: ["Programmer", "Designer"], date: "2015"}
+    .section_description.bottom_space
+      %ul
+        %li Designed and implemented an interactive and dynamic data visualization of historical mortality data.
+        %li The visualization allows for users to filter data and update time ranges in realtime to see changes in an intuitive and visual manner.
+    .clear
+
+    = partial 'notable_projects_header', locals: {title: "Web Design and Database Management", roles: ["Programmer", "Administrator", "Designer"], date: "2008 - 2013"}
+    .section_description.bottom_space
+      %ul
+        %li Designed and implemented a database that was used to track users and song information on a music blog.
+        %li Designed web pages with several different kinds of a sales graphs used to recruit agents for a real estate company. Updated web pages for a server relocation.
+        %li Lead a team that designed and programmed an interactive website for an interior decorator.
+    .clear

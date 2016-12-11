@@ -1,0 +1,7 @@
+.notable_projects_header
+  %h4 #{title}
+.section_keys
+  - roles.each do |role|
+    = partial 'info_tag', locals: {left_text: "Role", right_text: role}
+  %span.desktop #{date}
+  = partial 'info_tag', locals: {left_text: "Dates", right_text: date, classes: "mobile"}

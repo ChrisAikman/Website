@@ -111,7 +111,7 @@ li {
         float: left;
       }
 
-      ul p {
+      ul, p {
         text-align: justify;
         //margin-left: 0px;
       }
@@ -137,6 +137,17 @@ li {
   img {
     @include size(64px, 64px);
   }
+}
+
+.skills_list {
+  width: 25%;
+  box-sizing: border-box;
+  float: left;
+  text-align: left;
+}
+
+.notable_projects ul {
+  margin-bottom: 5px;
 }
 
 .info_tag {
@@ -177,6 +188,21 @@ li {
     border-left: 10px solid $primary-color;
     @include size(0, 0);
   }
+}
+
+.button_expand {
+  cursor: pointer;
+  cursor: hand;
+  width: 90px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+  font-weight: bold;
+  color: $secondary-color;
+  background-color: $primary-color;
+  @include round-border(2px);
+  @include paddinglr(4px, 4px);
+  margin-bottom: 5px;
 }
 
 .mobile {
