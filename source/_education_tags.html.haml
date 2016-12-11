@@ -1,0 +1,9 @@
+.section_keys.mobile
+  = partial 'info_tag', locals: {left_text: "Degree", right_text: degree}
+  = partial 'info_tag', locals: {left_text: "GPA",    right_text: gpa}
+  = partial 'info_tag', locals: {left_text: "Dates",  right_text: dates}
+
+.section_keys.desktop
+  = partial 'info_tag', locals: {left_text: "GPA",    right_text: gpa}
+  = dates
+.clear

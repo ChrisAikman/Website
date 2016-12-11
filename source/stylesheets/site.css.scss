@@ -97,10 +97,96 @@ li {
     background: $content-bg-color;
     padding: 10px;
     margin-bottom: 10px;
+
+    .section_description {
+      float: left;
+      width: 2 / 3 * 100%;
+      box-sizing: border-box;
+
+      p {
+        margin-left: 5px;
+      }
+
+      ul {
+        float: left;
+      }
+
+      ul p {
+        text-align: justify;
+        //margin-left: 0px;
+      }
+    }
+
+    .section_keys {
+      float: right;
+      width: 1 / 3 * 100%;
+      box-sizing: border-box;
+      text-align: right;
+    }
   }
 }
 
 .aboutme p {
   text-indent: 10px;
   @include paddinglr(5px, 5px);
+}
+
+.mapmarker {
+  margin-bottom: 10px;
+
+  img {
+    @include size(64px, 64px);
+  }
+}
+
+.info_tag {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 20px;
+  font-weight: bold;
+  @include round-border(2px);
+
+  span.left {
+    float: left;
+    text-align: left;
+    color: #7FBFFF;
+    background-color: $primary-color;
+    @include size(50px, 20px);
+    @include round-border(2px 0 0 2px);
+    @include paddinglr(4px, 5px);
+  }
+
+  span.right {
+    color: $primary-color;
+    background-color: #7FBFFF;
+    width: 105px;
+    text-align: right;
+    float: right;
+    display: block;
+    position: relative;
+    @include paddinglr(14px, 4px);
+    @include round-border(0 2px 2px 0);
+  }
+
+  span.arrow {
+    position: absolute;
+    left: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid $primary-color;
+    @include size(0, 0);
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  @include size(0, 0);
 }

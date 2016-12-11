@@ -1,3 +1,44 @@
 .content_section
   .section_header
     %h2 Education
+
+  /NMT
+  %h3 New Mexico Institute of Mining and Technology
+  .section_description.desktop
+    %p
+      801 Leroy Pl., Socorro, NM 87801
+      %br/
+      %b Bachelor of Science, Computer Science
+
+  .mapmarker.mobile
+    %a{href: "https://goo.gl/maps/BFQbDtCoyZL2", target: "_blank"}
+      %img{src: "./images/mapmarker.svg"}
+
+  = partial 'education_tags', locals: {degree: "B.S., Computer Science", gpa: "3.97 / 4.00", dates: "Jan 2014 to May 2016"}
+
+  .elective
+    Electives of Interest:
+
+  .section_description.bottom_space
+    %ul
+      %li Databases
+      %li Visualization
+
+    %ul
+      %li Neural Networks
+      %li Information Protection and Security
+  .clear
+
+  /OCC
+  %h3 Ocean County College
+  .section_description.desktop
+    %p
+      College Drive, Toms River, NJ 08754
+      %br/
+      %b Associate of Science, Computer Science
+
+  .mapmarker.mobile
+    %a{href: "https://goo.gl/maps/uUxHdL2VuYr", target: "_blank"}
+      %img{src: "./images/mapmarker.svg"}
+
+  = partial 'education_tags', locals: {degree: "A.S., Computer Science", gpa: "3.92 / 4.00", dates: "Sep 2006 to Dec 2008"}
