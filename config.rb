@@ -10,6 +10,7 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 # With alternative layout
+page "/e/*", layout: "errlayout"
 
 # General configuration
 

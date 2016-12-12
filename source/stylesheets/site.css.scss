@@ -208,6 +208,10 @@ li {
       }
     }
 
+    p {
+      text-align: justify;
+    }
+
     .section_keys {
       float: right;
       width: 1 / 3 * 100%;
@@ -258,6 +262,12 @@ li {
 
 .notable_projects ul {
   margin-bottom: 5px;
+}
+
+.example_picture {
+  float: right;
+  width: 55%;
+  margin-left: 10px;
 }
 
 .question {
@@ -336,6 +346,18 @@ li {
   }
 }
 
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
+.bottom_space {
+  margin-bottom: 15px;
+}
+
 .mobile {
   display: none;
 }
@@ -397,7 +419,7 @@ li {
   }
 
   .mobile {
-    display: block;
+    display: inherit;
   }
 
   .headerimg {
@@ -437,6 +459,12 @@ li {
     }
   }
 
+  .example_picture {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 0px;
+  }
+
   .electives {
     margin-left: 30px;
   }
@@ -450,6 +478,14 @@ li {
   .qual_skills li {
     margin-right: 30px;
     margin-bottom: 5px;
+  }
+
+  .fleft {
+    float: left;
+  }
+
+  .fright {
+    float: right;
   }
 
   .bottom_space {
