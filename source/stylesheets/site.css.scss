@@ -370,7 +370,7 @@ li {
   @include size(0, 0);
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 980px), print {
   .container_960 {
     width: 640px;
   }
@@ -419,7 +419,7 @@ li {
   }
 
   .mobile {
-    display: inherit;
+    display: block;
   }
 
   .headerimg {
